@@ -1,0 +1,54 @@
+{
+  "app_name": "KrishiNiti",
+  "tagline": "Precision Nutrient Intelligence",
+  "nav": {
+    "home": "Home",
+    "my_fields": "My Fields",
+    "recommendations": "Recommendations",
+    "soil_tests": "Soil Tests",
+    "history": "Application History",
+    "settings": "Settings",
+    "sync": "Sync Status"
+  },
+  "field": {
+    "name": "Field Name",
+    "area": "Field Area (Acres)",
+    "crop": "Crop",
+    "growth_stage": "Growth Stage",
+    "location": "Location",
+    "create_field": "Add New Field",
+    "select_crop": "Select Crop",
+    "select_stage": "Select Growth Stage"
+  },
+  "soil": {
+    "test_date": "Soil Test Date",
+    "nitrogen": "Nitrogen (N)",
+    "phosphorus": "Phosphorus (P)",
+    "potassium": "Potassium (K)",
+    "ph": "pH Value",
+    "organic_carbon": "Organic Carbon (OC %)",
+    "freshness_warning": "Soil test is {months} months old. Recommendations may be less accurate.",
+    "missing_data": "{parameter} data unavailable. Recommendation cannot be fully evaluated."
+  },
+  "recommendation": {
+    "today_action": "Today's Recommended Action",
+    "nutrient_status": "Nutrient Status",
+    "dosage": "Recommended Fertilizer & Quantity",
+    "timing": "Application Timing",
+    "cost_estimate": "Estimated Input Cost",
+    "sustainability": "Sustainability & Overuse Risk",
+    "why_explanation": "Why this recommendation?",
+    "confidence": "Confidence Score",
+    "record_application": "Record Application Done",
+    "weather_delay_warning": "Heavy rainfall expected ({probability}%). Delay application by {days} days."
+  },
+  "status": {
+    "low": "Deficient / Low",
+    "medium": "Moderate / Adequate",
+    "high": "High / Surplus",
+    "critical": "Critical",
+    "conf_high": "High Confidence",
+    "conf_medium": "Moderate Confidence",
+    "conf_low": "Low Confidence"
+  }
+}

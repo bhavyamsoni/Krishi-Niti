@@ -1,0 +1,72 @@
+[
+  {
+    "id": "urea",
+    "name": {
+      "en": "Urea",
+      "hi": "यूरिया",
+      "gu": "યુરિયા"
+    },
+    "grade": "46-0-0",
+    "n_percent": 46.0,
+    "p_percent": 0.0,
+    "k_percent": 0.0,
+    "bag_weight_kg": 45.0,
+    "default_price_inr_per_bag": 266.50
+  },
+  {
+    "id": "dap",
+    "name": {
+      "en": "DAP (Di-Ammonium Phosphate)",
+      "hi": "डीएपी (डी-अमोनियम फास्फेट)",
+      "gu": "ડીએપી (ડી-એમોનિયમ ફોસ્ફેટ)"
+    },
+    "grade": "18-46-0",
+    "n_percent": 18.0,
+    "p_percent": 46.0,
+    "k_percent": 0.0,
+    "bag_weight_kg": 50.0,
+    "default_price_inr_per_bag": 1350.00
+  },
+  {
+    "id": "mop",
+    "name": {
+      "en": "MOP (Muriate of Potash)",
+      "hi": "एमओपी (म्यूरिएट ऑफ पोटाश)",
+      "gu": "એમઓપી (મ્યુરિએટ ઓફ પોટાશ)"
+    },
+    "grade": "0-0-60",
+    "n_percent": 0.0,
+    "p_percent": 0.0,
+    "k_percent": 60.0,
+    "bag_weight_kg": 50.0,
+    "default_price_inr_per_bag": 1700.00
+  },
+  {
+    "id": "npk_12_32_16",
+    "name": {
+      "en": "NPK 12:32:16",
+      "hi": "एनपीके 12:32:16",
+      "gu": "એનપીકે 12:32:16"
+    },
+    "grade": "12-32-16",
+    "n_percent": 12.0,
+    "p_percent": 32.0,
+    "k_percent": 16.0,
+    "bag_weight_kg": 50.0,
+    "default_price_inr_per_bag": 1470.00
+  },
+  {
+    "id": "ssp",
+    "name": {
+      "en": "SSP (Single Super Phosphate)",
+      "hi": "एसएसपी (सिंगल सुपर फास्फेट)",
+      "gu": "એસએસપી (સિંગલ સુપર ફોસ્ફેટ)"
+    },
+    "grade": "0-16-0 + 11% S",
+    "n_percent": 0.0,
+    "p_percent": 16.0,
+    "k_percent": 0.0,
+    "bag_weight_kg": 50.0,
+    "default_price_inr_per_bag": 600.00
+  }
+]

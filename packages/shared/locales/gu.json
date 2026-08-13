@@ -1,0 +1,54 @@
+{
+  "app_name": "કૃષિનીતિ",
+  "tagline": "ચોક્કસ પોષક તત્વ બુદ્ધિમત્તા",
+  "nav": {
+    "home": "મુખ્ય પૃષ્ઠ",
+    "my_fields": "મારા ખેતરો",
+    "recommendations": "ભલામણો",
+    "soil_tests": "જમીન ચકાસણી",
+    "history": "ખાતર આપ્યાનો ઇતિહાસ",
+    "settings": "સેટિંગ્સ",
+    "sync": "સિંક સ્થિતિ"
+  },
+  "field": {
+    "name": "ખેતરનું નામ",
+    "area": "ખેતરનું ક્ષેત્રફળ (એકર)",
+    "crop": "પાક",
+    "growth_stage": "વિકાસનો તબક્કો",
+    "location": "સ્થળ",
+    "create_field": "નવું ખેતર ઉમેરો",
+    "select_crop": "પાક પસંદ કરો",
+    "select_stage": "વિકાસનો તબક્કો પસંદ કરો"
+  },
+  "soil": {
+    "test_date": "જમીન ચકાસણી તારીખ",
+    "nitrogen": "નાઇટ્રોજન (N)",
+    "phosphorus": "ફોસ્ફરસ (P)",
+    "potassium": "પોટાશ (K)",
+    "ph": "પીએચ મૂલ્ય",
+    "organic_carbon": "ઓર્ગેનિક કાર્બન (OC %)",
+    "freshness_warning": "જમીન ચકાસણી {months} મહિના જૂની છે. ભલામણની ચોકસાઈ ઘટી શકે છે.",
+    "missing_data": "{parameter} ડેટા ઉપલબ્ધ નથી. ભલામણનું સંપૂર્ણ મૂલ્યાંકન શક્ય નથી."
+  },
+  "recommendation": {
+    "today_action": "આજની ભલામણ કરેલ કામગીરી",
+    "nutrient_status": "પોષક તત્વોની સ્થિતિ",
+    "dosage": "ભલામણ કરેલ ખાતર અને જથ્થો",
+    "timing": "ખાતર નાખવાનો સમય",
+    "cost_estimate": "અંદાજિત ખર્ચ",
+    "sustainability": "ટકાઉપણું અને વધુ પડતા વપરાશનું જોખમ",
+    "why_explanation": "આ ભલામણ શા માટે આપવામાં આવી?",
+    "confidence": "વિશ્વાસ સ્કોર",
+    "record_application": "ખાતર નાખ્યાની નોંધ કરો",
+    "weather_delay_warning": "ભારે વરસાદની શક્યતા ({probability}%). ખાતર આપવાનું {days} દિવસ પાછળ ઠેલવો."
+  },
+  "status": {
+    "low": "ઓછું / ઊણપ",
+    "medium": "મધ્યમ / પૂરતું",
+    "high": "વધુ / વધારે",
+    "critical": "ગંભીર",
+    "conf_high": "ઉચ્ચ વિશ્વાસ",
+    "conf_medium": "મધ્યમ વિશ્વાસ",
+    "conf_low": "ઓછો વિશ્વાસ"
+  }
+}

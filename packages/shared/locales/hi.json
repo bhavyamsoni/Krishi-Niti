@@ -1,0 +1,54 @@
+{
+  "app_name": "कृषिनीति",
+  "tagline": "सटीक पोषक तत्व बुद्धिमत्ता",
+  "nav": {
+    "home": "मुख्य पृष्ठ",
+    "my_fields": "मेरे खेत",
+    "recommendations": "सिफारिशें",
+    "soil_tests": "मृदा परीक्षण",
+    "history": "उर्वरक प्रयोग इतिहास",
+    "settings": "सेटिंग्स",
+    "sync": "सिंक स्थिति"
+  },
+  "field": {
+    "name": "खेत का नाम",
+    "area": "खेत का क्षेत्रफल (एकड़)",
+    "crop": "फसल",
+    "growth_stage": "विकास चरण",
+    "location": "स्थान",
+    "create_field": "नया खेत जोड़ें",
+    "select_crop": "फसल चुनें",
+    "select_stage": "विकास चरण चुनें"
+  },
+  "soil": {
+    "test_date": "मृदा परीक्षण तिथि",
+    "nitrogen": "नाइट्रोजन (N)",
+    "phosphorus": "फास्फोरस (P)",
+    "potassium": "पोटेशियम (K)",
+    "ph": "पीएच मान",
+    "organic_carbon": "जैविक कार्बन (OC %)",
+    "freshness_warning": "मृदा परीक्षण {months} महीने पुराना है। सिफारिशों की सटीकता प्रभावित हो सकती है।",
+    "missing_data": "{parameter} डेटा उपलब्ध नहीं है। सिफारिश पूरी तरह से मूल्यांकित नहीं की जा सकती।"
+  },
+  "recommendation": {
+    "today_action": "आज की अनुशंसित कार्रवाई",
+    "nutrient_status": "पोषक तत्व स्थिति",
+    "dosage": "अनुशंसित उर्वरक और मात्रा",
+    "timing": "उर्वरक डालने का समय",
+    "cost_estimate": "अनुमानित लागत",
+    "sustainability": "सततता एवं अत्यधिक उपयोग जोखिम",
+    "why_explanation": "यह सिफारिश क्यों दी गई?",
+    "confidence": "विश्वास स्कोर",
+    "record_application": "उर्वरक प्रयोग दर्ज करें",
+    "weather_delay_warning": "भारी बारिश की संभावना ({probability}%)। उर्वरक प्रयोग {days} दिन के लिए टालें।"
+  },
+  "status": {
+    "low": "कम / कमी",
+    "medium": "पर्याप्त / मध्यम",
+    "high": "अधिक / उच्च",
+    "critical": "गंभीर",
+    "conf_high": "उच्च विश्वास",
+    "conf_medium": "मध्यम विश्वास",
+    "conf_low": "कम विश्वास"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "agronomic_rule_version": "1.0.0",
+  "effective_date": "2026-01-01",
+  "primary_source": "Government of India - Soil Health Card Scheme & ICAR Fertilizer Recommendations",
+  "region": "India - General & Western Zone (Gujarat Emphasis)",
+  "disclaimer": "KrishiNiti recommendations are decision-support guidelines derived from validated agronomic research and state fertilizer recommendation protocols. They do not replace local agronomist field evaluations.",
+  "review_status": "PROTOTYPE_VALIDATED"
+}

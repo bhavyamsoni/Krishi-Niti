@@ -1,0 +1,84 @@
+[
+  {
+    "id": "cotton",
+    "names": {
+      "en": "Cotton",
+      "hi": "कपास",
+      "gu": "કપાસ"
+    },
+    "stages": [
+      { "id": "basal", "name": { "en": "Sowing / Basal", "hi": "बुआई / बेसल", "gu": "વાવણી / બેઝલ" }, "sequence": 1 },
+      { "id": "vegetative", "name": { "en": "Vegetative Growth", "hi": "वानस्पतिक वृद्धि", "gu": "વાનસ્પતિક વૃદ્ધિ" }, "sequence": 2 },
+      { "id": "flowering", "name": { "en": "Flowering & Square Formation", "hi": "फूल और कली निर्माण", "gu": "ફૂલ અને ચાપવા" }, "sequence": 3 },
+      { "id": "boll_development", "name": { "en": "Boll Development", "hi": "जिंदवा / बॉल विकास", "gu": "ઝીંડવા વિકાસ" }, "sequence": 4 }
+    ],
+    "standard_n_kg_ha": 120,
+    "standard_p_kg_ha": 60,
+    "standard_k_kg_ha": 60
+  },
+  {
+    "id": "wheat",
+    "names": {
+      "en": "Wheat",
+      "hi": "गेहूं",
+      "gu": "ઘઉં"
+    },
+    "stages": [
+      { "id": "basal", "name": { "en": "Sowing / Crown Root", "hi": "बुआई / ताज जड़", "gu": "વાવણી / મૂળ વિકાસ" }, "sequence": 1 },
+      { "id": "tillering", "name": { "en": "Tillering Stage", "hi": "कल्ले निकलने की अवस्था", "gu": "ફૂટ નીકળવાની અલ્થા" }, "sequence": 2 },
+      { "id": "jointing", "name": { "en": "Jointing / Booting", "hi": "गांठ बनने की अवस्था", "gu": "ગાંઠ બેસવાની અલ્થા" }, "sequence": 3 },
+      { "id": "heading", "name": { "en": "Heading & Grain Filling", "hi": "बालियां और दाना भराई", "gu": "ડુંડી અને દાણા ભરાવ" }, "sequence": 4 }
+    ],
+    "standard_n_kg_ha": 120,
+    "standard_p_kg_ha": 60,
+    "standard_k_kg_ha": 40
+  },
+  {
+    "id": "rice",
+    "names": {
+      "en": "Rice / Paddy",
+      "hi": "धान / चावल",
+      "gu": "ડાંગર"
+    },
+    "stages": [
+      { "id": "basal", "name": { "en": "Transplanting / Basal", "hi": "रोपाई / बेसल", "gu": "ધરૂ રોપણી / બેઝલ" }, "sequence": 1 },
+      { "id": "active_tillering", "name": { "en": "Active Tillering", "hi": "सक्रिय कल्ले निकलना", "gu": "સક્રિય ફૂટાવ" }, "sequence": 2 },
+      { "id": "panicle_initiation", "name": { "en": "Panicle Initiation", "hi": "बालियाँ बनना", "gu": "ઈયળ / ઈંડા બેસવા" }, "sequence": 3 }
+    ],
+    "standard_n_kg_ha": 100,
+    "standard_p_kg_ha": 50,
+    "standard_k_kg_ha": 50
+  },
+  {
+    "id": "groundnut",
+    "names": {
+      "en": "Groundnut",
+      "hi": "मूंगफली",
+      "gu": "મગફળી"
+    },
+    "stages": [
+      { "id": "basal", "name": { "en": "Sowing / Basal", "hi": "बुआई / बेसल", "gu": "વાવણી / બેઝલ" }, "sequence": 1 },
+      { "id": "flowering", "name": { "en": "Flowering & Pegging", "hi": "फूल और सूइयां निकलना", "gu": "ફૂલ અને સૂયા બેસવા" }, "sequence": 2 },
+      { "id": "pod_development", "name": { "en": "Pod Development", "hi": "फली विकास", "gu": "જીંડવા / દોડવા ભરાવ" }, "sequence": 3 }
+    ],
+    "standard_n_kg_ha": 25,
+    "standard_p_kg_ha": 50,
+    "standard_k_kg_ha": 0
+  },
+  {
+    "id": "maize",
+    "names": {
+      "en": "Maize / Corn",
+      "hi": "मक्का",
+      "gu": "મકાઈ"
+    },
+    "stages": [
+      { "id": "basal", "name": { "en": "Sowing / Basal", "hi": "बुआई / बेसल", "gu": "વાવણી / બેઝલ" }, "sequence": 1 },
+      { "id": "knee_high", "name": { "en": "Knee-High Stage", "hi": "घुटने तक की ऊंचाई", "gu": "ગોઠણ સમાણી મકાઈ" }, "sequence": 2 },
+      { "id": "tasseling", "name": { "en": "Tasseling & Silking", "hi": "मંજરી और सिल्क निकलना", "gu": "ચમર અને ડોડા બેસવા" }, "sequence": 3 }
+    ],
+    "standard_n_kg_ha": 120,
+    "standard_p_kg_ha": 60,
+    "standard_k_kg_ha": 40
+  }
+]

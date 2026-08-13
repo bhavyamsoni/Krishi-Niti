@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgronomicRule",
+  "type": "object",
+  "properties": {
+    "rule_id": { "type": "string" },
+    "crop_id": { "type": "string" },
+    "growth_stage_id": { "type": "string" },
+    "source_organization": { "type": "string" },
+    "document_ref": { "type": "string" },
+    "version": { "type": "string" },
+    "region": { "type": "string" },
+    "n_requirement_kg_ha": { "type": "number" },
+    "p_requirement_kg_ha": { "type": "number" },
+    "k_requirement_kg_ha": { "type": "number" },
+    "stage_weight_n": { "type": "number" },
+    "stage_weight_p": { "type": "number" },
+    "stage_weight_k": { "type": "number" }
+  },
+  "required": ["rule_id", "crop_id", "growth_stage_id", "version", "n_requirement_kg_ha", "p_requirement_kg_ha", "k_requirement_kg_ha"]
+}

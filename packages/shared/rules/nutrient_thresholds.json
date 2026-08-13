@@ -1,0 +1,24 @@
+{
+  "units": "kg_per_ha",
+  "nitrogen_N": {
+    "low_upper_bound": 280,
+    "medium_upper_bound": 560
+  },
+  "phosphorus_P": {
+    "low_upper_bound": 11,
+    "medium_upper_bound": 25
+  },
+  "potassium_K": {
+    "low_upper_bound": 110,
+    "medium_upper_bound": 280
+  },
+  "organic_carbon_percent": {
+    "low_upper_bound": 0.50,
+    "medium_upper_bound": 0.75
+  },
+  "ph_status": {
+    "acidic_upper": 6.5,
+    "normal_upper": 8.2,
+    "alkaline_lower": 8.2
+  }
+}
