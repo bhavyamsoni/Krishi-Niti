@@ -19,9 +19,10 @@ from krishiniti_engine import (
     WeatherInput
 )
 
+
 class RecommendationService:
     @staticmethod
-    async def generate_for_field(
+    def generate_for_field(
         db: Session,
         field_id: str,
         include_weather: bool = True
@@ -31,7 +32,7 @@ class RecommendationService:
         if not field:
             raise HTTPException(status_code=404, detail="Field not found")
 
-        # 2. Fetch Latest Soil Test
+        # 2. Fetch Latest Valid Soil Test
         latest_soil_test = (
             db.query(SoilTest)
             .filter(SoilTest.field_id == field_id)
@@ -41,30 +42,31 @@ class RecommendationService:
         if not latest_soil_test:
             raise HTTPException(
                 status_code=400,
-                detail="No soil test found for this field. Please create a soil test record before requesting a recommendation."
+                detail="No soil test found for this field. Please add a soil test before requesting a recommendation."
             )
 
-        # 3. Fetch Historical Fertilizer Applications
+        # 3. Fetch Fertilizer Application History
         applications = (
             db.query(FertilizerApplication)
             .filter(FertilizerApplication.field_id == field_id)
             .all()
         )
 
-        # 4. Fetch Weather if requested
-        weather_snapshot: Optional[WeatherSnapshot] = None
+        # 4. Fetch Weather (synchronous)
         weather_input: Optional[WeatherInput] = None
         if include_weather:
-            weather_snapshot = await WeatherProvider.get_weather_for_field(db, field)
+            weather_snapshot = WeatherProvider.get_weather_for_field(db, field)
             if weather_snapshot:
-                hours_ago = int((datetime.utcnow() - weather_snapshot.retrieved_at).total_seconds() / 3600)
+                hours_ago = int(
+                    (datetime.utcnow() - weather_snapshot.retrieved_at).total_seconds() / 3600
+                )
                 weather_input = WeatherInput(
                     rainfall_probability=weather_snapshot.rainfall_probability,
                     expected_rainfall_mm=weather_snapshot.expected_rainfall_mm,
                     retrieved_at_delta_hours=hours_ago
                 )
 
-        # 5. Build Engine Inputs
+        # 5. Build Engine Input
         soil_in = SoilInput(
             nitrogen_n=latest_soil_test.nitrogen_n,
             phosphorus_p=latest_soil_test.phosphorus_p,
@@ -73,13 +75,11 @@ class RecommendationService:
             organic_carbon=latest_soil_test.organic_carbon,
             test_date=latest_soil_test.test_date
         )
-
         crop_in = CropInput(
             crop_id=field.crop_id,
             growth_stage_id=field.current_stage_id,
             irrigation_status=True
         )
-
         history_items = [
             FertilizerHistoryItem(
                 product_id=app.product_id,
@@ -89,7 +89,6 @@ class RecommendationService:
             )
             for app in applications
         ]
-
         pipeline_input = RecommendationPipelineInput(
             field_area_acres=field.area_acres,
             soil=soil_in,
@@ -98,10 +97,10 @@ class RecommendationService:
             weather=weather_input
         )
 
-        # 6. Execute Deterministic Agronomic Engine (No LLM in safety-critical dosage!)
+        # 6. Run Deterministic Engine (no LLM in dosage decisions)
         engine_output = run_recommendation_pipeline(pipeline_input)
 
-        # 7. Persist Snapshot in Database for Auditability and History
+        # 7. Persist to database for auditability
         recommendation = Recommendation(
             field_id=field.id,
             input_snapshot=pipeline_input.model_dump(mode="json"),
@@ -113,5 +112,4 @@ class RecommendationService:
         db.add(recommendation)
         db.commit()
         db.refresh(recommendation)
-
         return recommendation

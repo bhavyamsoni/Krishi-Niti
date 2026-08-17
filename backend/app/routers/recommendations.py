@@ -11,23 +11,26 @@ from app.middleware.auth import get_current_user
 
 router = APIRouter(prefix="/recommendations", tags=["Recommendations"])
 
+
 @router.post("", response_model=RecommendationResponse)
-async def generate_recommendation(
+def generate_recommendation(
     req: RecommendationCreateRequest,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    # Verify field access
-    field = db.query(Field).filter(Field.id == req.field_id, Field.farmer_id == current_user.id).first()
+    field = db.query(Field).filter(
+        Field.id == req.field_id,
+        Field.farmer_id == current_user.id
+    ).first()
     if not field:
         raise HTTPException(status_code=404, detail="Field not found or access denied")
 
-    recommendation = await RecommendationService.generate_for_field(
+    return RecommendationService.generate_for_field(
         db=db,
         field_id=req.field_id,
         include_weather=req.include_weather
     )
-    return recommendation
+
 
 @router.get("/field/{field_id}", response_model=List[RecommendationResponse])
 def get_field_recommendations(
@@ -35,7 +38,10 @@ def get_field_recommendations(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    field = db.query(Field).filter(Field.id == field_id, Field.farmer_id == current_user.id).first()
+    field = db.query(Field).filter(
+        Field.id == field_id,
+        Field.farmer_id == current_user.id
+    ).first()
     if not field:
         raise HTTPException(status_code=404, detail="Field not found")
 

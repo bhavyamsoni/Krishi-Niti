@@ -9,8 +9,9 @@ from app.middleware.auth import get_current_user
 
 router = APIRouter(prefix="/weather", tags=["Weather"])
 
+
 @router.get("/{field_id}", response_model=WeatherResponse)
-async def get_field_weather(
+def get_field_weather(
     field_id: str,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
@@ -19,7 +20,7 @@ async def get_field_weather(
     if not field:
         raise HTTPException(status_code=404, detail="Field not found")
 
-    snapshot = await WeatherProvider.get_weather_for_field(db, field)
+    snapshot = WeatherProvider.get_weather_for_field(db, field)
     if not snapshot:
         raise HTTPException(status_code=503, detail="Weather data currently unavailable")
 
