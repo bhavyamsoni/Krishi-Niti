@@ -366,6 +366,13 @@ def update_field(field_id):
                 setattr(f, k, v)
         db.commit()
         db.refresh(f)
+        return ok(field_response(f))
+    except ValueError as e:
+        return err(str(e), 401)
+    finally:
+        db.close()
+
+
 @flask_app.route("/api/v1/fields/<field_id>", methods=["DELETE"])
 def delete_field(field_id):
     db = get_db()
