@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: krishiniti-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt && pip install -e packages/engine"
+    startCommand: "cd backend && gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DEBUG
+        value: "false"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: "sqlite:///./krishiniti.db"
+      - key: PYTHON_VERSION
+        value: "3.11.9"

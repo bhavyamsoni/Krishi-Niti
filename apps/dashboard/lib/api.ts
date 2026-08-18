@@ -24,7 +24,8 @@ export interface OfficerAnalyticsData {
   village_breakdown: VillageAnalytics[];
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+const RAW_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API_BASE = RAW_URL.endsWith('/api/v1') ? RAW_URL : `${RAW_URL.replace(/\/$/, '')}/api/v1`;
 
 export async function fetchOfficerAnalytics(district?: string, block?: string): Promise<OfficerAnalyticsData> {
   try {

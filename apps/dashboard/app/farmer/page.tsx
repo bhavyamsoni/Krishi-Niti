@@ -11,7 +11,8 @@ import {
   Navigation, Crosshair, Trash2, Compass
 } from 'lucide-react';
 
-const API = (process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8000') + '/api/v1';
+const RAW_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API = RAW_API_URL.endsWith('/api/v1') ? RAW_API_URL : `${RAW_API_URL.replace(/\/$/, '')}/api/v1`;
 
 async function apiFetch(path: string, opts?: RequestInit) {
   const res = await fetch(`${API}${path}`, {
