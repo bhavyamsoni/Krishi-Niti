@@ -362,7 +362,21 @@ def update_field(field_id):
                 setattr(f, k, v)
         db.commit()
         db.refresh(f)
-        return ok(field_response(f))
+@flask_app.route("/api/v1/fields/<field_id>", methods=["DELETE"])
+def delete_field(field_id):
+    db = get_db()
+    try:
+        user = user_or_401(db)
+        f = db.query(Field).filter(Field.id == field_id, Field.farmer_id == user.id).first()
+        if not f:
+            return err("Field not found", 404)
+        db.query(SoilTest).filter(SoilTest.field_id == field_id).delete()
+        db.query(FertilizerApplication).filter(FertilizerApplication.field_id == field_id).delete()
+        db.query(Recommendation).filter(Recommendation.field_id == field_id).delete()
+        db.query(WeatherSnapshot).filter(WeatherSnapshot.field_id == field_id).delete()
+        db.delete(f)
+        db.commit()
+        return ok({"message": "Field deleted successfully"})
     except ValueError as e:
         return err(str(e), 401)
     finally:
@@ -524,6 +538,23 @@ def list_applications(field_id):
             return err("Field not found", 404)
         apps = db.query(FertilizerApplication).filter(FertilizerApplication.field_id == field_id).order_by(FertilizerApplication.application_date.desc()).all()
         return ok([app_response(a) for a in apps])
+    except ValueError as e:
+        return err(str(e), 401)
+    finally:
+        db.close()
+
+
+@flask_app.route("/api/v1/applications/<app_id>", methods=["DELETE"])
+def delete_application(app_id):
+    db = get_db()
+    try:
+        user = user_or_401(db)
+        a = db.query(FertilizerApplication).filter(FertilizerApplication.id == app_id).first()
+        if not a:
+            return err("Application not found", 404)
+        db.delete(a)
+        db.commit()
+        return ok({"message": "Application deleted successfully"})
     except ValueError as e:
         return err(str(e), 401)
     finally:

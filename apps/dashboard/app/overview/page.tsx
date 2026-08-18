@@ -54,11 +54,11 @@ export default function OverviewPage() {
       {/* Header Banner */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Regional Nutrient Intelligence Dashboard</h1>
-          <p className="text-sm text-slate-500 mt-1">Aggregated nutrient status & decision intelligence across Gujarat agricultural zones</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Regional Nutrient Intelligence Dashboard</h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Aggregated nutrient status & decision intelligence across Gujarat agricultural zones</p>
         </div>
-        <div className="flex items-center space-x-2 bg-emerald-50 text-emerald-800 px-3.5 py-1.5 rounded-lg border border-emerald-200 text-xs font-semibold">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 px-3.5 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-700 text-xs font-semibold">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
           <span>Real-time Sync Active</span>
         </div>
       </div>
@@ -66,13 +66,13 @@ export default function OverviewPage() {
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Total Fields */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between text-slate-500 mb-3">
+        <div className="bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider">Fields Assessed</span>
             <Layers className="w-5 h-5 text-primary-500" />
           </div>
-          <div className="text-3xl font-extrabold text-slate-900">{overview.total_fields_assessed.toLocaleString()}</div>
-          <p className="text-xs text-slate-500 mt-2 flex items-center">
+          <div className="text-3xl font-extrabold text-slate-900 dark:text-white">{overview.total_fields_assessed.toLocaleString()}</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 flex items-center">
             <span className="text-emerald-600 font-semibold flex items-center mr-1">
               <ArrowUpRight className="w-3.5 h-3.5" /> +12%
             </span> vs previous season
@@ -80,44 +80,44 @@ export default function OverviewPage() {
         </div>
 
         {/* Nitrogen Deficiency */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between text-slate-500 mb-3">
+        <div className="bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider">Nitrogen Deficit</span>
             <Flame className="w-5 h-5 text-red-500" />
           </div>
           <div className="text-3xl font-extrabold text-red-600">{overview.nitrogen_deficiency_percent}%</div>
-          <p className="text-xs text-red-700 bg-red-50 px-2 py-0.5 rounded font-medium mt-2 inline-block">
+          <p className="text-xs text-red-700 bg-red-50 dark:bg-red-900/20 dark:text-red-400 px-2 py-0.5 rounded font-medium mt-2 inline-block">
             Priority Intervention Required
           </p>
         </div>
 
         {/* Phosphorus Deficiency */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between text-slate-500 mb-3">
+        <div className="bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider">Phosphorus Deficit</span>
             <AlertTriangle className="w-5 h-5 text-amber-500" />
           </div>
           <div className="text-3xl font-extrabold text-amber-600">{overview.phosphorus_deficiency_percent}%</div>
-          <p className="text-xs text-slate-500 mt-2">Moderate deficiency in cotton belts</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Moderate deficiency in cotton belts</p>
         </div>
 
         {/* Overuse / Imbalance Risk */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between text-slate-500 mb-3">
+        <div className="bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider">Overuse / Leaching</span>
             <TrendingDown className="w-5 h-5 text-orange-500" />
           </div>
           <div className="text-3xl font-extrabold text-orange-600">{overview.potential_overuse_percent}%</div>
-          <p className="text-xs text-slate-500 mt-2">Excess chemical urea splitting risk</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Excess chemical urea splitting risk</p>
         </div>
       </div>
 
       {/* Chart and Quick Priority Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Deficiency Chart */}
-        <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <h2 className="text-base font-bold text-slate-900 mb-1">Regional Nutrient Deficiency Profile (%)</h2>
-          <p className="text-xs text-slate-500 mb-6">Percentage of assessed field samples testing below ICAR critical thresholds</p>
+        <div className="lg:col-span-2 bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <h2 className="text-base font-bold text-slate-900 dark:text-white mb-1">Regional Nutrient Deficiency Profile (%)</h2>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">Percentage of assessed field samples testing below ICAR critical thresholds</p>
           
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -139,13 +139,13 @@ export default function OverviewPage() {
         </div>
 
         {/* Data Quality & Stale Soil Warning */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div className="bg-white dark:bg-[#141b22] p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
           <div>
-            <div className="flex items-center space-x-2 text-slate-800 font-bold mb-1">
+            <div className="flex items-center space-x-2 text-slate-800 dark:text-slate-200 font-bold mb-1">
               <Calendar className="w-5 h-5 text-primary-500" />
               <h2>Soil Health Card Freshness</h2>
             </div>
-            <p className="text-xs text-slate-500 mb-6">Age distribution of underlying soil test records</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">Age distribution of underlying soil test records</p>
 
             <div className="space-y-4">
               <div>
@@ -180,24 +180,24 @@ export default function OverviewPage() {
             </div>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-600 mt-6 border border-slate-200/60">
+          <div className="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl text-xs text-slate-600 dark:text-slate-400 mt-6 border border-slate-200/60 dark:border-slate-700">
             <strong>Extension Action Recommendation:</strong> Trigger mobile soil testing drive in Gondal and Babra blocks.
           </div>
         </div>
       </div>
 
       {/* Village Priority Breakdown Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-6 border-b border-slate-200 flex items-center justify-between">
+      <div className="bg-white dark:bg-[#141b22] rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+        <div className="p-6 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
           <div>
-            <h2 className="text-base font-bold text-slate-900">Priority Intervention Villages</h2>
-            <p className="text-xs text-slate-500 mt-0.5">Villages exhibiting critical nitrogen deficits or continuous chemical over-application</p>
+            <h2 className="text-base font-bold text-slate-900 dark:text-white">Priority Intervention Villages</h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Villages exhibiting critical nitrogen deficits or continuous chemical over-application</p>
           </div>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-600">
-            <thead className="bg-slate-50 text-xs font-bold text-slate-500 uppercase border-b border-slate-200">
+            <thead className="bg-slate-50 dark:bg-slate-800/60 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase border-b border-slate-200 dark:border-slate-700">
               <tr>
                 <th className="px-6 py-3.5">Village / Block</th>
                 <th className="px-6 py-3.5">District</th>
@@ -208,12 +208,12 @@ export default function OverviewPage() {
                 <th className="px-6 py-3.5">Top Crops</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200">
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {village_breakdown.map((v, i) => (
-                <tr key={i} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-slate-900">{v.village} <span className="text-slate-400 font-normal">({v.block})</span></td>
-                  <td className="px-6 py-4">{v.district}</td>
-                  <td className="px-6 py-4 font-medium">{v.fields_count.toLocaleString()}</td>
+                <tr key={i} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-slate-900 dark:text-white">{v.village} <span className="text-slate-400 font-normal">({v.block})</span></td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">{v.district}</td>
+                  <td className="px-6 py-4 font-medium text-slate-700 dark:text-slate-300">{v.fields_count.toLocaleString()}</td>
                   <td className="px-6 py-4">
                     <span className="font-bold text-red-600">{v.nitrogen_deficiency_percent}%</span>
                   </td>

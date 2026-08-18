@@ -4,13 +4,60 @@
 
 @import 'leaflet/dist/leaflet.css';
 
+/* ── Light mode CSS variables ───────────────────────────────────────── */
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --muted: #64748b;
+}
+
+/* ── Dark mode CSS variables (activated when .dark is on <html>) ────── */
+.dark {
+  --background: #0c1117;
+  --foreground: #e2e8f0;
+  --surface: #141b22;
+  --surface-2: #1c2530;
+  --border: #2d3748;
+  --muted: #94a3b8;
+  color-scheme: dark;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Smooth dark mode transitions ────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Override for elements where fast transitions look better */
+button, a {
+  transition-duration: 0.12s;
+}
+
+/* ── Scrollbar (dark mode friendly) ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
 }
