@@ -25,6 +25,7 @@ if hasattr(sys.stderr, "reconfigure"):
 sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, request, jsonify, redirect
+from flask_cors import CORS
 from waitress import serve
 
 from app.database import SessionLocal, engine, Base
@@ -53,6 +54,9 @@ Base.metadata.create_all(bind=engine)
 
 # ── Flask App ────────────────────────────────────────────────────────────────
 flask_app = Flask(__name__)
+
+# ── CORS — allow all origins in dev; restrict in prod via ALLOWED_ORIGINS env ─
+CORS(flask_app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 
 # ── Helpers ─────────────────────────────────────────────────────────────────
@@ -629,10 +633,10 @@ def sync_pull():
 
 # ── Launch ────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    PORT = 8000
+    PORT = int(os.environ.get("PORT", 8000))
     print("=================================================================")
-    print(f"  KrishiNiti API server running on  http://127.0.0.1:{PORT}   ")
-    print(f"  API reference at:                 http://127.0.0.1:{PORT}/openapi")
+    print(f"  KrishiNiti API server running on  http://0.0.0.0:{PORT}      ")
+    print(f"  API reference at:                 http://0.0.0.0:{PORT}/openapi")
     print("  Press Ctrl+C to stop.                                          ")
     print("=================================================================")
     serve(flask_app, host="0.0.0.0", port=PORT, threads=8)

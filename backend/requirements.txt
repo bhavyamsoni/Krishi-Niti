@@ -1,14 +1,12 @@
-fastapi>=0.110.0
+flask>=3.0.0
+waitress>=3.0.0
+gunicorn>=22.0.0
+sqlalchemy>=2.0.28
 pydantic>=2.6.0
 pydantic-settings>=2.2.0
-sqlalchemy>=2.0.28
 httpx>=0.27.0
 python-jose[cryptography]>=3.3.0
 passlib[bcrypt]>=1.7.4
 python-multipart>=0.0.9
-waitress>=3.0.0
-a2wsgi>=1.10.0
-# pg8000 is a pure-Python PostgreSQL driver (no C extensions, works on Python 3.14)
-# Uncomment for Supabase/PostgreSQL production use:
-# pg8000>=1.31.0
+flask-cors>=4.0.0
 krishiniti_engine>=1.0.0
